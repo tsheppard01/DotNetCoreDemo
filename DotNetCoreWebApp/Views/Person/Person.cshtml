@@ -1,0 +1,23 @@
+﻿@model DotNetCoreWebApp.Models.PersonsViewModel
+@{
+    ViewData["Title"] = "Person";
+}
+
+<h1>Person</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Forename</td>
+            <td>@Model.Surname</td>
+            <td>@Model.DateOfBirth</td>
+        </tr>
+    </tbody>
+</table>

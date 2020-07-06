@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[Person] (
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  forename NVARCHAR(MAX) NOT NULL,
+  surname NVARCHAR(MAX) NOT NULL,
+  dob NVARCHAR(MAX) NOT NULL,
+  address_line_1 NVARCHAR(MAX) NOT NULL,
+  address_line_2 NVARCHAR(MAX),
+  city NVARCHAR(MAX) NOT NULL,
+  email NVARCHAR(MAX) NOT NULL,
+  username NVARCHAR(MAX) NOT NULL   
+)

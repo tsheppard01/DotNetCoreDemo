@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.3.1.5\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.3.1.5\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4467E15-2C13-4B5F-89A7-7C12A9F37668}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>dbUpMigrations</RootNamespace>
+    <AssemblyName>dbUpMigrations</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UserSecretId>89f46f4c-cf93-4b60-acd9-86183053d27a</UserSecretId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="dbup-core">
+      <HintPath>..\packages\dbup-core.4.4.0\lib\net45\dbup-core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.4.3.0\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.3.1\lib\net472\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="dbup-sqlserver">
+      <HintPath>..\packages\dbup-sqlserver.4.4.0\lib\net46\dbup-sqlserver.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.3.1.5\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.3.1.5\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.UserSecrets.3.1.5\lib\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="appSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\03072020_1600_Create_Person_Table.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.3.1.5\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.3.1.5\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" />
+</Project>
