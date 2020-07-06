@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using DotNetCoreWebApp.Models;
 using DotNetCoreWebApp.Repositories.Entities;
 using DotNetCoreWebApp.Services;
+using DotNetCoreWebApp.services.Data;
 
 namespace DotNetCoreWebApp.Controllers
 {
@@ -39,7 +40,7 @@ namespace DotNetCoreWebApp.Controllers
         public async Task<IActionResult> Index(int id)
         {
             var person = await _personService.GetPerson(id);
-            var model = new PersonsViewModel()
+            var model = new PersonViewModel()
             {
                 Id = person.Id,
                 Forename = person.Forename,
@@ -56,16 +57,18 @@ namespace DotNetCoreWebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(PersonsViewModel personsViewModel)
+        public async Task<IActionResult> Add(PersonViewModel personViewModel)
         {
-            var person = new Person()
+            var person = new AddPersonRequest()
             {
-                Forename = personsViewModel.Forename,
-                Surname = personsViewModel.Surname,
-                Dob = personsViewModel.DateOfBirth,
-                AddressLine1 = "N",
-                AddressLine2 = "N",
-                City = "N"
+                Forename = personViewModel.Forename,
+                Surname = personViewModel.Surname,
+                DateOfBirth = personViewModel.DateOfBirth,
+                AddressLine1 = personViewModel.AddressLine1,
+                AddressLine2 = personViewModel.AddressLine2,
+                City = personViewModel.City,
+                EmailAddress = personViewModel.EmailAddress,
+                Username = personViewModel.Username
             };
             
             var id = await _personService.AddPerson(person);

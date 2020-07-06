@@ -1,4 +1,4 @@
-﻿@model DotNetCoreWebApp.Models.PersonsViewModel
+﻿@model DotNetCoreWebApp.Models.PersonViewModel
 
 @{
     ViewData["Title"] = "Add Person";
@@ -27,6 +27,41 @@
             <input type="text" class="form-control" asp-for="DateOfBirth" />
         </label>
         <span class="text-danger" asp-validation-for="DateOfBirth"></span>
+    </div>
+    <div>
+        <label>
+            Address Line 1
+            <input type="text" class="form-control" asp-for="AddressLine1" />
+        </label>
+        <span class="text-danger" asp-validation-for="AddressLine1"></span>
+    </div>
+    <div>
+        <label>
+            Address Line 2
+            <input type="text" class="form-control" asp-for="AddressLine2" />
+        </label>
+        <span class="text-danger" asp-validation-for="AddressLine2"></span>
+    </div>
+    <div>
+        <label>
+            City
+            <input type="text" class="form-control" asp-for="City" />
+        </label>
+        <span class="text-danger" asp-validation-for="City"></span>
+    </div>
+    <div>
+        <label>
+            Email Address
+            <input type="text" class="form-control" asp-for="EmailAddress" />
+        </label>
+        <span class="text-danger" asp-validation-for="EmailAddress"></span>
+    </div>
+    <div>
+        <label>
+            Username
+            <input type="text" class="form-control" asp-for="Username" />
+        </label>
+        <span class="text-danger" asp-validation-for="Username"></span>
     </div>
     <div class="button-group">
         <button type="submit" class="btn btn-default">Submit</button>

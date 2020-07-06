@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DotNetCoreWebApp.Repositories.Entities;
+using DotNetCoreWebApp.services.Data;
 using DotNetCoreWebApp.Services.Data;
 
 namespace DotNetCoreWebApp.Services
@@ -12,6 +13,6 @@ namespace DotNetCoreWebApp.Services
 
         public Task<IEnumerable<GetPersonSummaryResponse>> GetAllPersonsSummaries();
 
-        public Task<int> AddPerson(Person person);
+        public Task<int> AddPerson(AddPersonRequest person);
     }
 }
